@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>BizFlow | Services</title>
+
+    <!-- Bootstrap -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+    <!-- BizFlow CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+
+        .services-hero {
+            background: linear-gradient(
+                135deg,
+                #0d6efd,
+                #084298
+            );
+
+            color: white;
+
+            padding: 100px 0;
+        }
+
+        .service-page-card {
+            background: white;
+
+            padding: 35px;
+
+            border-radius: 20px;
+
+            height: 100%;
+
+            box-shadow:
+                0 8px 30px rgba(0, 0, 0, 0.08);
+
+            transition: 0.4s;
+        }
+
+        .service-page-card:hover {
+            transform: translateY(-10px);
+
+            box-shadow:
+                0 20px 45px rgba(0, 0, 0, 0.15);
+        }
+
+        .service-page-icon {
+            width: 70px;
+            height: 70px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            background: #e7f1ff;
+
+            border-radius: 18px;
+
+            font-size: 32px;
+
+            margin-bottom: 20px;
+        }
+
+        .service-page-card h4 {
+            font-weight: bold;
+        }
+
+        .filter-btn {
+            margin: 5px;
+
+            border-radius: 25px;
+        }
+
+        .pricing-card {
+            background: white;
+
+            padding: 40px 30px;
+
+            border-radius: 20px;
+
+            text-align: center;
+
+            height: 100%;
+
+            box-shadow:
+                0 8px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .pricing-card h2 {
+            color: #0d6efd;
+
+            font-weight: bold;
+        }
+
+        .pricing-card ul {
+            list-style: none;
+
+            padding: 0;
+        }
+
+        .pricing-card li {
+            padding: 8px 0;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     NAVBAR
+========================= -->
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+
+    <div class="container">
+
+        <a
+            class="navbar-brand fw-bold fs-3"
+            href="index.html"
+        >
+            BizFlow
+        </a>
+
+
+        <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarMenu"
+        >
+
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+
+        <div
+            class="collapse navbar-collapse"
+            id="navbarMenu"
+        >
+
+            <ul class="navbar-nav ms-auto">
+
+                <li class="nav-item">
+                    <a
+                        class="nav-link"
+                        href="index.html"
+                    >
+                        Home
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a
+                        class="nav-link"
+                        href="about.html"
+                    >
+                        About
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a
+                        class="nav-link active"
+                        href="services.html"
+                    >
+                        Services
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a
+                        class="nav-link"
+                        href="dashboard.html"
+                    >
+                        Dashboard
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a
+                        class="nav-link"
+                        href="clients.html"
+                    >
+                        Clients
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a
+                        class="nav-link"
+                        href="contact.html"
+                    >
+                        Contact
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</nav>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="services-hero">
+
+    <div class="container text-center">
+
+        <span class="badge bg-light text-primary mb-3">
+            OUR SERVICES
+        </span>
+
+        <h1 class="display-4 fw-bold">
+            Business Solutions
+        </h1>
+
+        <p class="lead mt-3">
+            Powerful tools and services to help
+            your business grow faster.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     SERVICES
+========================= -->
+
+<section class="py-5">
+
+    <div class="container">
+
+
+        <div class="text-center mb-4">
+
+            <h2 class="fw-bold">
+                Explore Our Services
+            </h2>
+
+            <p class="text-muted">
+                Select a category to filter services.
+            </p>
+
+        </div>
+
+
+        <!-- FILTER BUTTONS -->
+
+        <div class="text-center mb-5">
+
+            <button
+                class="btn btn-primary filter-btn"
+                onclick="filterServices('all')"
+            >
+                All
+            </button>
+
+            <button
+                class="btn btn-outline-primary filter-btn"
+                onclick="filterServices('management')"
+            >
+                Management
+            </button>
+
+            <button
+                class="btn btn-outline-primary filter-btn"
+                onclick="filterServices('analytics')"
+            >
+                Analytics
+            </button>
+
+            <button
+                class="btn btn-outline-primary filter-btn"
+                onclick="filterServices('growth')"
+            >
+                Growth
+            </button>
+
+        </div>
+
+
+        <!-- SERVICE CARDS -->
+
+        <div class="row g-4" id="servicesContainer">
+
+
+            <!-- SERVICE 1 -->
+
+            <div
+                class="col-lg-4 col-md-6 service-item"
+                data-category="analytics"
+            >
+
+                <div class="service-page-card">
+
+                    <div class="service-page-icon">
+                        📊
+                    </div>
+
+                    <h4>
+                        Business Analytics
+                    </h4>
+
+                    <p class="text-muted">
+                        Monitor revenue, sales and
+                        business performance using
+                        powerful analytics.
+                    </p>
+
+                    <span class="badge bg-primary">
+                        Analytics
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- SERVICE 2 -->
+
+            <div
+                class="col-lg-4 col-md-6 service-item"
+                data-category="management"
+            >
+
+                <div class="service-page-card">
+
+                    <div class="service-page-icon">
+                        👥
+                    </div>
+
+                    <h4>
+                        Client Management
+                    </h4>
+
+                    <p class="text-muted">
+                        Organize client information,
+                        relationships and business
+                        activities.
+                    </p>
+
+                    <span class="badge bg-success">
+                        Management
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- SERVICE 3 -->
+
+            <div
+                class="col-lg-4 col-md-6 service-item"
+                data-category="growth"
+            >
+
+                <div class="service-page-card">
+
+                    <div class="service-page-icon">
+                        🚀
+                    </div>
+
+                    <h4>
+                        Business Growth
+                    </h4>
+
+                    <p class="text-muted">
+                        Discover growth opportunities
+                        and improve business productivity.
+                    </p>
+
+                    <span class="badge bg-warning text-dark">
+                        Growth
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- SERVICE 4 -->
+
+            <div
+                class="col-lg-4 col-md-6 service-item"
+                data-category="management"
+            >
+
+                <div class="service-page-card">
+
+                    <div class="service-page-icon">
+                        📋
+                    </div>
+
+                    <h4>
+                        Project Management
+                    </h4>
+
+                    <p class="text-muted">
+                        Manage projects, tasks,
+                        deadlines and team activities.
+                    </p>
+
+                    <span class="badge bg-success">
+                        Management
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- SERVICE 5 -->
+
+            <div
+                class="col-lg-4 col-md-6 service-item"
+                data-category="analytics"
+            >
+
+                <div class="service-page-card">
+
+                    <div class="service-page-icon">
+                        📈
+                    </div>
+
+                    <h4>
+                        Sales Reporting
+                    </h4>
+
+                    <p class="text-muted">
+                        Generate reports and understand
+                        your sales performance.
+                    </p>
+
+                    <span class="badge bg-primary">
+                        Analytics
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- SERVICE 6 -->
+
+            <div
+                class="col-lg-4 col-md-6 service-item"
+                data-category="growth"
+            >
+
+                <div class="service-page-card">
+
+                    <div class="service-page-icon">
+                        💡
+                    </div>
+
+                    <h4>
+                        Business Consulting
+                    </h4>
+
+                    <p class="text-muted">
+                        Get strategic insights to improve
+                        operations and business growth.
+                    </p>
+
+                    <span class="badge bg-warning text-dark">
+                        Growth
+                    </span>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     PRICING
+========================= -->
+
+<section class="py-5 bg-light">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <h2 class="fw-bold">
+                Simple Pricing
+            </h2>
+
+            <p class="text-muted">
+                Choose a plan that fits your business.
+            </p>
+
+        </div>
+
+
+        <div class="row g-4">
+
+
+            <!-- BASIC -->
+
+            <div class="col-md-4">
+
+                <div class="pricing-card">
+
+                    <h4>
+                        Basic
+                    </h4>
+
+                    <h2>
+                        ₹999
+                        <small class="fs-6 text-muted">
+                            /month
+                        </small>
+                    </h2>
+
+                    <hr>
+
+                    <ul>
+
+                        <li>✓ Client Management</li>
+
+                        <li>✓ Basic Reports</li>
+
+                        <li>✓ Email Support</li>
+
+                    </ul>
+
+                    <a
+                        href="contact.html"
+                        class="btn btn-outline-primary"
+                    >
+                        Choose Plan
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- PROFESSIONAL -->
+
+            <div class="col-md-4">
+
+                <div class="pricing-card border border-primary">
+
+                    <span class="badge bg-primary mb-3">
+                        POPULAR
+                    </span>
+
+                    <h4>
+                        Professional
+                    </h4>
+
+                    <h2>
+                        ₹2,499
+                        <small class="fs-6 text-muted">
+                            /month
+                        </small>
+                    </h2>
+
+                    <hr>
+
+                    <ul>
+
+                        <li>✓ Everything in Basic</li>
+
+                        <li>✓ Advanced Analytics</li>
+
+                        <li>✓ Priority Support</li>
+
+                    </ul>
+
+                    <a
+                        href="contact.html"
+                        class="btn btn-primary"
+                    >
+                        Choose Plan
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- ENTERPRISE -->
+
+            <div class="col-md-4">
+
+                <div class="pricing-card">
+
+                    <h4>
+                        Enterprise
+                    </h4>
+
+                    <h2>
+                        ₹4,999
+                        <small class="fs-6 text-muted">
+                            /month
+                        </small>
+                    </h2>
+
+                    <hr>
+
+                    <ul>
+
+                        <li>✓ Everything in Professional</li>
+
+                        <li>✓ Custom Solutions</li>
+
+                        <li>✓ Dedicated Support</li>
+
+                    </ul>
+
+                    <a
+                        href="contact.html"
+                        class="btn btn-outline-primary"
+                    >
+                        Contact Us
+                    </a>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer class="bg-dark text-white py-4">
+
+    <div class="container text-center">
+
+        <h5>
+            BizFlow
+        </h5>
+
+        <p class="text-secondary mb-2">
+            Smart solutions for modern businesses.
+        </p>
+
+        <small>
+            © 2026 BizFlow. All Rights Reserved.
+        </small>
+
+    </div>
+
+</footer>
+
+
+<!-- Bootstrap JS -->
+
+<script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+</script>
+
+
+<!-- Services JavaScript -->
+
+<script src="js/services.js"></script>
+
+</body>
+
+</html>
